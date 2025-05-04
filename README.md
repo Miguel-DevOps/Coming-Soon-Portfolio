@@ -1,6 +1,6 @@
 # Coming Soon Portfolio
 
-[![License](https://img.shields.io/badge/License-[MIT]-blue.svg?style=flat-square)](./LICENSE) [![Astro Version](https://img.shields.io/badge/Astro-v5.7.10-orange.svg?style=flat-square&logo=astro)](https://astro.build) 
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](./LICENSE) [![Astro Version](https://img.shields.io/badge/Astro-v5.7.10-orange.svg?style=flat-square&logo=astro)](https://astro.build) 
 
 This project is an adaptation and improvement of a web template originally built with pure HTML, CSS, and JavaScript. It was migrated to [Astro](https://astro.build/) to leverage its modern architecture, improve performance, and facilitate maintenance through the use of reusable components, layouts, and the integration of internationalization (i18n).
 
@@ -34,8 +34,8 @@ Follow these steps to set up and run the project in your local environment.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Miguel-DevOps/Coming-Soon-Portfolio.git]
-    cd [Coming-Soon-Portfolio]
+    git clone https://github.com/Miguel-DevOps/Coming-Soon-Portfolio.git
+    cd Coming-Soon-Portfolio
     ```
 
 2.  **Install dependencies:**
