@@ -1,0 +1,177 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!-- details
+        ================================================== -->
+<section id="details" class="s-details">
+  <div class="row">
+    <div class="column">
+      <h1 class="text-huge-title text-center">{t("details.mainTitle")}</h1>
+
+      <nav class="tab-nav">
+        <ul
+          class="tab-nav__list"
+          role="tablist"
+          aria-label={t("details.tabNavAriaLabel") ?? "Details Navigation"}
+        >
+          <li class="active" data-id="tab-about">
+            <a
+              href="#tab-about"
+              role="tab"
+              aria-selected="true"
+              aria-controls="tab-about"
+              id="tab-link-about"
+            >
+              <span>{t("details.tabAboutLabel")}</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#tab-services"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tab-services"
+              id="tab-link-services"
+            >
+              <span>{t("details.tabServicesLabel")}</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#tab-contact"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tab-contact"
+              id="tab-link-contact"
+            >
+              <span>{t("details.tabContactLabel")}</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- end tab-nav -->
+
+      <div class="tab-content">
+        <!-- 01 - tab about -->
+        <div
+          id="tab-about"
+          class="tab-content__item"
+          role="tabpanel"
+          aria-labelledby="tab-link-about"
+        >
+          <div class="row tab-content__item-header">
+            <div class="column">
+              <h2>{t("details.aboutTitle")}</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column" set:html={t("details.aboutContent")}>
+              <!--
+                Note: The HTML content defined in `ui.ts` for `details.aboutContent`
+                will replace all the original content in this section. This includes
+                specific paragraphs, the "More About Us" section, and the "Need Web Hosting?" section.
+
+                If you want to preserve or customize these sections, make sure to include
+                the corresponding text directly in the HTML string of `details.aboutContent`
+                in the `ui.ts` file or translate their texts individually here.
+              -->
+            </div>
+          </div>
+        </div>
+        <!-- end 01 - tab about -->
+
+        <!-- 02 - tab services -->
+        <div
+          id="tab-services"
+          class="tab-content__item"
+          role="tabpanel"
+          aria-labelledby="tab-link-services"
+        >
+          <div class="row tab-content__item-header">
+            <div class="column">
+              <h2>{t("details.servicesTitle")}</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column" set:html={t("details.servicesContent")}>
+              <!--
+                Note: The HTML content defined in `ui.ts` for `details.servicesContent`
+                will replace all the original content in this section. This includes
+                the introductory paragraph and the detailed list of services.
+
+                If you want to preserve or customize the detailed list, make sure to include
+                the corresponding text directly in the HTML string of `details.servicesContent`
+                in the `ui.ts` file or translate their texts individually here.
+              -->
+            </div>
+          </div>
+          <!-- end services-list -->
+        </div>
+        <!-- end 02 - tab services -->
+
+        <!-- 03 - tab contact -->
+        <div
+          id="tab-contact"
+          class="tab-content__item"
+          role="tabpanel"
+          aria-labelledby="tab-link-contact"
+        >
+          <div class="row tab-content__item-header">
+            <div class="column">
+              <h2>{t("details.contactTitle")}</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column" set:html={t("details.contactContent")}>
+              <!--
+                Note: The HTML content defined in `ui.ts` for `details.contactContent`
+                will replace all the original content in this section. This includes
+                the introductory paragraph, the "Follow Me" section, and the contact details
+                (email/phone).
+
+                If you want to preserve or customize these sections, make sure to include
+                the corresponding text directly in the HTML string of `details.contactContent`
+                in the `ui.ts` file or translate their texts individually here.
+              -->
+            </div>
+          </div>
+        </div>
+        <!-- end 03 - tab contact -->
+      </div>
+      <!-- end tab content -->
+
+      <!-- footer  -->
+      <footer>
+        <div class="ss-copyright">
+          <span>{t("details.footerCopyright")}</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="ss-go-top">
+    <a class="smoothscroll" title={t("details.backToTop")} href="#top">
+      <span>{t("details.backToTop")}</span>
+      <svg
+        viewBox="0 0 15 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        width="26"
+        height="26"
+        ><path
+          d="M7.5 1.5l.354-.354L7.5.793l-.354.353.354.354zm-.354.354l4 4 .708-.708-4-4-.708.708zm0-.708l-4 4 .708.708 4-4-.708-.708zM7 1.5V14h1V1.5H7z"
+          fill="currentColor"></path></svg
+      >
+    </a>
+  </div>
+  <!-- end ss-go-top -->
+</section>
+<!-- end s-details -->

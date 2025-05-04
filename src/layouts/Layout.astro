@@ -1,0 +1,65 @@
+---
+import "../styles/vendor.css"; // Import vendor-specific CSS styles
+import "../styles/styles.css"; // Import custom global CSS styles
+---
+
+<!doctype html>
+<html class="no-js" lang="es">
+  <head>
+    <!-- Basic page needs
+    ================================================== -->
+    <meta charset="utf-8" />
+    <title>Developmi | Full Stack Developer</title>
+    <meta name="description" content="Miguel Lozano, Full Stack Developer especializado en tecnologías modernas. Ofrezco soluciones web escalables, seguras y de alto rendimiento para usuarios técnicos y no técnicos." />
+    <!-- Meta description for SEO -->
+    <meta name="author" content="Miguel Lozano" />
+    <!-- Author meta tag -->
+
+    <!-- Open Graph / Social Media
+    ================================================== -->
+    <meta property="og:title" content="Developmi | Full Stack Developer" />
+    <meta property="og:description" content="Miguel Lozano, Full Stack Developer especializado en tecnologías modernas. Ofrezco soluciones web escalables, seguras y de alto rendimiento para usuarios técnicos y no técnicos." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.developmi.com/" />
+    <meta property="og:image" content="https://www.developmi.com/images/og-image.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Developmi" />
+
+    <!-- Twitter Card
+    ================================================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Developmi | Full Stack Developer" />
+    <meta name="twitter:description" content="Miguel Lozano, Full Stack Developer especializado en tecnologías modernas. Ofrezco soluciones web escalables, seguras y de alto rendimiento para usuarios técnicos y no técnicos." />
+    <meta name="twitter:image" content="https://www.developmi.com/images/og-image.png" />
+    <meta name="twitter:creator" content="@miguel_lozano" />
+
+    <!-- Mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Responsive design -->
+
+    <!-- JavaScript
+    ================================================== -->
+    <script src="/scripts/plugins.js" is:inline></script>
+    <!-- Inline JavaScript for plugins -->
+    <script src="/scripts/main.js" is:inline></script>
+    <!-- Inline JavaScript for main functionality -->
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Favicon for browsers -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Apple touch icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <!-- 32x32 PNG favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- 16x16 PNG favicon -->
+    <link rel="manifest" href="./site.webmanifest" />
+    <!-- Web manifest for PWA -->
+  </head>
+  <body id="top" class="ss-preload theme-static">
+    <slot />
+    <!-- Slot for injecting page-specific content -->
+  </body>
+</html>

@@ -1,0 +1,27 @@
+# Proteger el archivo .htaccess para que no sea accesible desde el navegador
+<Files .htaccess>
+  Require all denied
+</Files>
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# Habilitar el motor de reescritura
+RewriteEngine On
+
+# Redirigir todo el tráfico a HTTPS (si tu servidor soporta HTTPS)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Detectar el idioma del navegador y redirigir
+RewriteCond %{HTTP:Accept-Language} ^es [NC]
+RewriteCond %{REQUEST_URI} !^/es/
+RewriteRule ^(.*)$ /es/$1 [L,R=302]
+
+RewriteCond %{HTTP:Accept-Language} ^en [NC]
+RewriteCond %{REQUEST_URI} !^/en/
+RewriteRule ^(.*)$ /en/$1 [L,R=302]
+
+# Redirigir a español por defecto si no se detecta idioma
+RewriteCond %{REQUEST_URI} !^/es/
+RewriteRule ^(.*)$ /es/$1 [L,R=302]

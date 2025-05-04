@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Layout.astro"; // Main layout for the page
+import Intro from "@/components/Intro.astro"; // Intro section component
+import Preloader from "@/components/Preloader.astro"; // Preloader component
+import Details from "@/components/Details.astro"; // Details section component
+---
+
+<Layout>
+  <Preloader />
+  <!-- Displays a loading animation before the page fully loads -->
+  <Intro />
+  <!-- Introductory section with key information -->
+  <Details />
+  <!-- Section with detailed information about services and contact -->
+</Layout>
+
+<!-- TEMPLATE DESIGN AND BASE CODE
+        Original design by StyleShout (https://www.styleshout.com/)
+        Template adapted to Astro v5.0 by Developmi (https://www.developmi.com/)
+        ================================================== -->

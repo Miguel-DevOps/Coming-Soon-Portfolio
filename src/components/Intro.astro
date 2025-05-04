@@ -1,0 +1,114 @@
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils"; // Importar utilidades i18n
+
+const lang = getLangFromUrl(Astro.url); // Obtener idioma de la URL
+const t = useTranslations(lang); // Obtener función de traducción
+---
+
+<!-- intro
+        ================================================== -->
+<section id="intro" class="s-intro">
+  <div class="s-intro__bg"></div>
+
+  <header class="s-intro__header">
+    <div class="s-intro__logo">
+      <a class="logo" href="/">
+        <img src="/images/logo.svg" alt={t("intro.logoAlt")} />
+        {/* Alt text already present, good practice */}
+      </a>
+    </div>
+  </header>
+  <!-- s-intro__header -->
+
+  <div class="row s-intro__content">
+    <div class="column">
+      <div class="text-pretitle">{t("intro.pretitle")}</div>
+
+      <h1 class="text-huge-title" set:html={t("intro.mainTitle")} />
+      {/* Ensure heading structure is logical */}
+
+      <div class="s-intro__content-bottom">
+        <div class="s-intro__content-bottom-block">
+          <h5>{t("intro.launchingLabel")}</h5>
+
+          <div class="counter">
+            <div class="counter__time">
+              <span class="ss-days">000</span>
+              <span>{t("intro.daysLabel")}</span>
+            </div>
+            <div class="counter__time">
+              <span class="ss-hours">00</span>
+              <span>{t("intro.hoursLabel")}</span>
+            </div>
+            <div class="counter__time">
+              <span class="ss-minutes">00</span>
+              <span>{t("intro.minutesLabel")}</span>
+              {/* Asegúrate de tener esta traducción */}
+            </div>
+            <div class="counter__time">
+              <span class="ss-seconds">00</span>
+              <span>{t("intro.secondsLabel")}</span>
+            </div>
+          </div>
+          <!-- end counter -->
+        </div>
+        <!-- end s-intro-content__bottom-block -->
+
+        <div class="s-intro__content-bottom-block">
+          <h5>{t("intro.followLabel")}</h5>
+
+          <ul class="social">
+            <li>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/miguel-dev-ops/"
+                aria-label={t("intro.linkedinAriaLabel") ?? "LinkedIn"}
+              >
+                LI
+              </a>
+            </li>
+            <!--
+              Note: The `aria-label` attribute is dynamically set using the translation key `intro.linkedinAriaLabel`.
+              This ensures accessibility for screen readers by providing a descriptive label for the LinkedIn link.
+              If the translation is missing, a default label ('LinkedIn') will be used.
+            -->
+
+            <li>
+              <a
+                target="_blank"
+                href="https://wa.me/573134692221?text=Hola%20Developmi,%20vengo%20del%20sitio%20web,%20hablemos!"
+                aria-label={t("intro.whatsappAriaLabel") ?? "WhatsApp"}
+              >
+                WH
+              </a>
+            </li>
+            <!--
+              Note: The `aria-label` attribute is dynamically set using the translation key `intro.whatsappAriaLabel`.
+              This ensures accessibility for screen readers by providing a descriptive label for the WhatsApp link.
+              If the translation is missing, a default label ('WhatsApp') will be used.
+            -->
+          </ul>
+        </div>
+        <!-- end s-intro-content__bottom-block -->
+      </div>
+      <!-- end s-intro-content__bottom -->
+    </div>
+  </div>
+  <!-- s-intro__content -->
+
+  <LanguageSwitcher />
+
+  <div class="s-intro__scroll">
+    <a href="#details" class="smoothscroll">
+      {/* Ensure t('intro.scrollLabel') is descriptive */}
+      {t("intro.scrollLabel")}</a
+    >
+  </div>
+  <!-- s-intro__scroll -->
+</section>
+<!-- end s-intro -->
+
+<!-- hidden element
+        ================================================== -->
+<div id="hidden" aria-hidden="true" style="opacity: 0;"></div>

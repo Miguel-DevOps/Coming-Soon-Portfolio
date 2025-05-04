@@ -1,0 +1,26 @@
+---
+const { currentLocale } = Astro;
+
+// Define the supported locales directly
+const locales = ["en", "es"]; // Replace with your actual supported locales
+---
+
+<!-- Language Switcher Component -->
+<div class="s-intro__notify language-switcher">
+  {
+    locales.map((locale) => {
+      const targetUrl = `/${locale}/`; // Link to the root of the selected language
+      const isCurrent = locale === currentLocale;
+
+      // Render the link ONLY if it is NOT the current language
+      return (
+        !isCurrent && (
+          <a href={targetUrl} class:list={["btn--stroke", "btn--small"]}>
+            {locale.toUpperCase()}{" "}
+            {/* Display the language code in uppercase for clarity */}
+          </a>
+        )
+      );
+    })
+  }
+</div>
